@@ -1,14 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
-import Home from './components/Pages/Home/Home';
+import MealDetails from './components/Pages/MealDetails/MealDetails';
+import Random from './components/Pages/Random/Random'
 
 
 function App() {
   return (
     <div>
       <Header></Header>
-      <Home></Home>
+      <h2 className='popular-item'>Popular Items</h2>
+      <Random></Random>
     </div>
   );
 }

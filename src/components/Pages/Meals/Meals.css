@@ -1,0 +1,22 @@
+.meals{
+    /* border: 1px solid #566573; */
+    background-color: #e6e0e057;
+    width: 310px;
+    height: 340px;
+    border-radius: 10px; 
+    box-shadow: 10px 10px 10px #aaaaaa;
+}
+
+.meals:hover{
+    box-shadow: 10px 10px 30px #aaaaaa;
+}
+
+.meals img{
+    width: 300px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.meal-info{
+    margin: 8px;
+}

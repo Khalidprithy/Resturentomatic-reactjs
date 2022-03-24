@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import MealDetails from '../MealDetails/MealDetails';
 import Meals from '../Meals/Meals';
 import './Random.css'
 
@@ -22,15 +23,23 @@ const Random = () => {
         }
     }
 
-    return (
-        <div className='random'>
-            {
-                randoms.map(random => <Meals
-                    key={random.id}
-                    random={random}
-                ></Meals>)
-            }
+    const ShowMealDetails = (randoms) => {
+        // console.log(randoms)
+    }
 
+
+
+    return (
+        <div className='meal-container'>
+            <div onClick={() => ShowMealDetails(randoms)} className='random'>
+                {
+                    randoms.map(random => <Meals
+                        key={random.id}
+                        random={random}
+                        MealDetails={ShowMealDetails}
+                    ></Meals>)
+                }
+            </div>
         </div>
     );
 };

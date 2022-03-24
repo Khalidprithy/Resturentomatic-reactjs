@@ -1,4 +1,30 @@
+.meal-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    margin: 20px;
+}
+
 .random{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+@media screen and (max-width: 1100px) {
+   .random{
+        grid-template-columns: repeat(2, 1fr);
+        background-color:red;
+    }  
+}
+
+
+@media screen and (max-width: 800px) {
+    .meal-container{
+        grid-template-columns: 1fr;
+    }
+   .random{
+        grid-template-columns: 1fr;
+        background-color: green;
+    }
+    
 }
