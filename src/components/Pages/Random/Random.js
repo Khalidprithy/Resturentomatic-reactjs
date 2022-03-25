@@ -5,6 +5,7 @@ import './Random.css'
 
 const Random = () => {
     const [randoms, setRandoms] = useState([]);
+    const [details, setDetails] = useState([])
 
     useEffect(() => {
         getRandom();
@@ -23,21 +24,39 @@ const Random = () => {
         }
     }
 
-    const ShowMealDetails = (randoms) => {
-        // console.log(randoms)
-    }
+    useEffect(() => {
+    }, [])
 
+    const ShowMealDetails = (randoms) => {
+        // console.log(randoms);
+        const newDetails = [...details, randoms];
+        setDetails(newDetails);
+    }
 
 
     return (
         <div className='meal-container'>
-            <div onClick={() => ShowMealDetails(randoms)} className='random'>
+            <div className='random'>
                 {
                     randoms.map(random => <Meals
                         key={random.id}
                         random={random}
-                        MealDetails={ShowMealDetails}
+                        ShowMealDetails={ShowMealDetails}
                     ></Meals>)
+                }
+            </div>
+            <div className='order-container'>
+                <div className='order-info'>
+
+                    <h1>Orders</h1>
+                    <p>Ordered Items: {details.length}</p>
+                </div>
+                {
+                    details.map(detail =>
+                        <MealDetails>
+                            detail = {detail}
+                        </MealDetails>
+                    )
                 }
             </div>
         </div>
